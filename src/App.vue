@@ -2,7 +2,7 @@
 <template>
     <div class="container">
     <Header />
-    <n-split direction="vertical" style="height: 100vh">
+    <n-split direction="vertical" style="height: 100vh" :default-size="0.35">
       <template #1> 
         <div class="Pane1">
           <div class="scoreBar">
@@ -32,7 +32,6 @@
 
 
 <script setup >
-  import { NSplit, NButton } from "naive-ui";
   import Header from "./components/header.vue";
   import Score from "./components/score.vue";
   import News from "./components/news.vue";
@@ -43,13 +42,13 @@
 <style scoped>
 .Pane1 {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 }
 
 .Pane2 {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   margin-top: 2%;
 }
@@ -57,14 +56,15 @@
   background-color: #f0f0f0;
 }
 .scoreBar{
-  width: 60%;
+  width: 55%;
   border-radius: 10px;
   background-color: #d1d1d1;
 }
 .news{
-  width: 30%;
+  min-width: 35%;
   border-radius: 10px;
-  background-color: #d1d1d1;
+  /* background-color: #d1d1d1; */
+  /* background-color: white; */
 }
 .InputArea{
   width: 40%;
