@@ -1,11 +1,28 @@
 <template>
-    <div class="icon">
-        <h1>Truth Guard</h1>
+    <div class="container">
+      <img src="../images/icon.png"/>
+      <span class="text">TRUYHGUARD</span>
     </div>
-</template>
+  </template>
 
-<style scoped>
-.icon {
-    margin-bottom: 0%;
-}
-</style>
+  <style scoped>
+  .container {
+    display: block;
+    padding: 0 5%;
+    background-color: #f0f0f0;
+    margin-bottom: 1%;
+  }
+
+  img {
+    width: 35px;
+    margin-top: 1.5%;
+  }
+
+  .text {
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size:large;
+  }
+
+  </style>
+  
