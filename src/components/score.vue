@@ -1,18 +1,31 @@
 <template>
-  <n-progress
-    type="line"
-    indicator-placement="inside"
-    :color="themeVars.errorColor"
-    :rail-color="changeColor(themeVars.errorColor, { alpha: 0.2 })"
-    :percentage="20"
-  />
-  <n-progress
-    type="line"
-    :color="themeVars.warningColor"
-    :rail-color="changeColor(themeVars.warningColor, { alpha: 0.2 })"
-    :percentage="20"
-    :indicator-text-color="themeVars.warningColor"
-  />
+  <div class="score_container">
+    Overall
+    <n-progress
+      type="line"
+      indicator-placement="inside"
+      :color="themeVars.warningColor"
+      :rail-color="changeColor(themeVars.warningColor, { alpha: 0.1 })"
+      :percentage="65"
+    />
+    Content
+    <n-progress
+      type="line"
+      :color="themeVars.infoColor"
+      :rail-color="changeColor(themeVars.infoColor, { alpha: 0.1 })"
+      :percentage="80"
+      :indicator-text-color="themeVars.infoColor"
+    />
+    Source
+    <n-progress
+      type="line"
+      :color="themeVars.infoColor"
+      :rail-color="changeColor(themeVars.infoColor, { alpha: 0.1 })"
+      :percentage="50"
+      :indicator-text-color="themeVars.infoColor"
+    />
+    <h1>Score</h1>
+  </div>
 </template>
 
 <script>
@@ -34,3 +47,11 @@ export default defineComponent({
   },
 });
 </script>
+<style scoped>
+.score_container{
+  margin: 5% 5%;
+}
+h1{
+  color: darkgray;
+}
+</style>
