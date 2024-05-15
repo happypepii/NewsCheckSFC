@@ -1,9 +1,8 @@
-
 <template>
-    <div class="container">
+  <div class="container">
     <Header />
     <n-split direction="vertical" style="height: 100vh" :default-size="0.35">
-      <template #1> 
+      <template #1>
         <div class="Pane1">
           <div class="scoreBar">
             <Score />
@@ -12,15 +11,14 @@
             <News />
           </div>
         </div>
-
       </template>
 
-      <template #2> 
+      <template #2>
         <div class="Pane2">
           <div class="InputArea">
             <Input />
           </div>
-          <N-Button>Submit</N-Button>
+          <n-button strong secondary round> Submit </n-button>
           <div class="OutputArea">
             <Output />
           </div>
@@ -30,13 +28,12 @@
   </div>
 </template>
 
-
-<script setup >
-  import Header from "./components/header.vue";
-  import Score from "./components/score.vue";
-  import News from "./components/news.vue";
-  import Input from "./components/input.vue";
-  import Output from "./components/output.vue";
+<script setup>
+import Header from "./components/header.vue";
+import Score from "./components/score.vue";
+import News from "./components/news.vue";
+import Input from "./components/input.vue";
+import Output from "./components/output.vue";
 </script>
 
 <style scoped>
@@ -52,26 +49,26 @@
   align-items: center;
   margin-top: 2%;
 }
-.container{
+.container {
   background-color: #f0f0f0;
 }
-.scoreBar{
+.scoreBar {
   width: 55%;
   border-radius: 10px;
   background-color: #d1d1d1;
 }
-.news{
+.news {
   min-width: 35%;
   border-radius: 10px;
   /* background-color: #d1d1d1; */
   /* background-color: white; */
 }
-.InputArea{
+.InputArea {
   width: 40%;
   border-radius: 10px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
-.OutputArea{
+.OutputArea {
   width: 40%;
   border-radius: 10px;
   background-color: #d1d1d1;

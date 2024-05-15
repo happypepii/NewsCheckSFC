@@ -22,6 +22,7 @@
     font-weight: bold;
     font-family: 'Times New Roman', Times, serif;
     font-size:large;
+    color: black;
   }
 
   </style>
