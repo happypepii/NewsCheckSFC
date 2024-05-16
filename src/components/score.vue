@@ -50,6 +50,7 @@ export default defineComponent({
 <style scoped>
 .score_container{
   margin: 5% 5%;
+  height: 150px;
 }
 h1{
   color: darkgray;
