@@ -1,10 +1,3 @@
 <template>
-    <div class="output">
-    
-    </div>
+    Where the output will be
 </template>
-<style scoped>
-.output{
-    height: 330px;
-}
-</style>

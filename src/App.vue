@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Header />
-    <n-split direction="vertical" style="height: 100vh" :default-size="0.4">
+    <n-split direction="vertical" style="height: 100vh" :default-size="0.35">
       <template #1>
         <div class="Pane1">
           <div class="scoreBar">
@@ -58,7 +58,7 @@ import Output from "./components/output.vue";
   background-color: #d1d1d1;
 }
 .news {
-  width: 35%;
+  min-width: 35%;
   border-radius: 10px;
   /* background-color: #d1d1d1; */
   /* background-color: white; */
