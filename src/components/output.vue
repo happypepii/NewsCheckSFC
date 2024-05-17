@@ -1,3 +1,10 @@
 <template>
-    Where the output will be
+    <div class="output">
+    
+    </div>
 </template>
+<style scoped>
+.output{
+    height: 330px;
+}
+</style>
