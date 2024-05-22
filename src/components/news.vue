@@ -1,5 +1,6 @@
 <template>
-    <n-card title="更多新聞" style="margin: 5% 5%; max-width: 90%; border-radius: 15px;">
+    <div class="news_container">
+    <h1>More news</h1>
     <n-tabs type="line" animated>
       <n-tab-pane name="News1" tab="News1">
         <n-card title="何時淘汰「未捕獲碳排放」的燃煤發電？G7達成共識：2035年" >
@@ -20,13 +21,18 @@
         </n-card>
       </n-tab-pane>
     </n-tabs>
-  </n-card>
+  </div>
   </template>
   
   <script setup>
   </script>
 
 <style scoped>
+h1{
+  color: darkgray;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
 .tag {
   position: absolute; /* Set position to absolute */
   bottom: 10px; /* Adjust as needed */

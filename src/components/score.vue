@@ -54,5 +54,7 @@ export default defineComponent({
 }
 h1{
   color: darkgray;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
 }
 </style>

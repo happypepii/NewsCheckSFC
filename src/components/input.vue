@@ -12,6 +12,9 @@
           v-model:value="textareaValue"
           placeholder="News input"
           class="custom2"
+          :autosize="{
+            maxRows:22
+          }"
         />
       </n-space>
     </div>
@@ -48,7 +51,7 @@
   
   .custom2 {
     width: 100%; 
-    height: 230px;
+    min-height: 230px;
   }
   
   </style>

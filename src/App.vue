@@ -36,7 +36,7 @@ import Input from "./components/input.vue";
 import Output from "./components/output.vue";
 
 import { ref } from "vue";
-const split = ref(0.35);
+const split = ref(0.4);
 watch(split, (newValue, oldValue) => {
   console.log("Split value changed:", newValue);
 });
@@ -60,14 +60,16 @@ watch(split, (newValue, oldValue) => {
 }
 .scoreBar {
   width: 55%;
+  min-height: 250px;
   border-radius: 10px;
   background-color: #d1d1d1;
 }
 .news {
-  min-width: 35%;
+  width: 35%;
+  min-height: 250px;
   border-radius: 10px;
-  /* background-color: #d1d1d1; */
-  /* background-color: white; */
+  background-color: white; 
+  padding: 1% 2%;
 }
 .InputArea {
   width: 40%;
