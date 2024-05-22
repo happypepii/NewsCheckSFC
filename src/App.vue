@@ -77,6 +77,6 @@ watch(split, (newValue, oldValue) => {
 .OutputArea {
   width: 40%;
   border-radius: 10px;
-  background-color: #d1d1d1;
+  /* background-color: #d1d1d1; */
 }
 </style>
