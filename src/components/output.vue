@@ -1,3 +1,11 @@
 <template>
-    Where the output will be
+    <div class="output">
+    
+    </div>
 </template>
+<style scoped>
+.output{
+    min-height: 330px;
+    max-height: 80%;
+}
+</style>
