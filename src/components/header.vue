@@ -10,6 +10,7 @@
     display: block;
     padding: 0 5%;
     background-color: #f0f0f0;
+    margin-bottom: 1%;
   }
 
   img {

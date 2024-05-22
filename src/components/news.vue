@@ -1,19 +1,26 @@
 <template>
-  <n-tabs type="segment" animated>
-    <n-tab-pane style="height: 300px;" name="chap1" tab="news 1">
-      <Card />
-    </n-tab-pane>
-    <n-tab-pane style="height: 300px;"name="chap2" tab="news 2">
-      <Card />
-    </n-tab-pane>
-    <n-tab-pane style="height: 300px;"name="chap3" tab="news 3">
-      <Card />
-    </n-tab-pane>
-  </n-tabs>
-</template>
+    <n-card title="更多新聞" style="margin: 5% 5%; max-width: 90%; border-radius: 15px;">
+    <n-tabs type="line" animated>
+      <n-tab-pane name="News1" tab="News1">
+        <n-card title="卡片" >
+        卡片内容
+        </n-card>
+      </n-tab-pane>
+      <n-tab-pane name="News2" tab="News2">
+        <n-card title="卡片">
+        卡片内容
+        </n-card>
+      </n-tab-pane>
+      <n-tab-pane name="News3" tab="News3">
+        <n-card title="卡片">
+        卡片内容
+        </n-card>
+      </n-tab-pane>
+    </n-tabs>
+  </n-card>
+  </template>
   
   <script setup>
-
   </script>
 
   <style scoped>
