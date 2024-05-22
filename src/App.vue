@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Header />
-    <n-split direction="vertical" style="height: 100vh" :default-size="0.35">
+    <n-split v-model:size="split" direction="vertical" style="height: 100vh">
       <template #1>
         <div class="Pane1">
           <div class="scoreBar">
@@ -15,11 +15,11 @@
 
       <template #2>
         <div class="Pane2">
-          <div class="InputArea">
+          <div class="InputArea" :style="{ height: (100 - split * 100) + '%' }">
             <Input />
           </div>
           <n-button strong secondary round> Submit </n-button>
-          <div class="OutputArea">
+          <div class="OutputArea" :style="{ height: (100 - split * 100) + '%' }">
             <Output />
           </div>
         </div>
@@ -34,6 +34,12 @@ import Score from "./components/score.vue";
 import News from "./components/news.vue";
 import Input from "./components/input.vue";
 import Output from "./components/output.vue";
+
+import { ref } from "vue";
+const split = ref(0.35);
+watch(split, (newValue, oldValue) => {
+  console.log("Split value changed:", newValue);
+});
 </script>
 
 <style scoped>

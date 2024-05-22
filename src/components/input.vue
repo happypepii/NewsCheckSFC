@@ -40,14 +40,14 @@
   .body-container {
     justify-content: center;
     align-items: center;
-    margin: 5% 3%; /* 水平置中 */
+    margin: 5% 3%; 
   }
   .custom1 {
-    width: 100%; /* Set the width of the input */
+    width: 100%; 
   }
   
   .custom2 {
-    width: 100%; /* Set the width of the input */
+    width: 100%; 
     height: 230px;
   }
   
