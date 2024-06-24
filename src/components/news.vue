@@ -1,10 +1,9 @@
 <template>
-    <div class="news_container">
     <h1>More news</h1>
-    <n-tabs type="line" animated>
+    <n-tabs type="segment" animated>
       <n-tab-pane name="News1" tab="News1">
         <button class="card-btn" @click="openNewTab">
-        <n-card title="何時淘汰「未捕獲碳排放」的燃煤發電？G7達成共識：2035年" action="">
+        <n-card title="何時淘汰「未捕獲碳排放」的燃煤發電？G7達成共識：2035年" size="small">
         sky news
         <n-tag :bordered="false" type="success" class="tag">
         60%
@@ -23,7 +22,6 @@
         </n-card>
       </n-tab-pane>
     </n-tabs>
-  </div>
   </template>
   
   <script setup>

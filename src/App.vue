@@ -1,7 +1,8 @@
 <template>
   <div class="container">
     <Header />
-    <n-split v-model:size="split" direction="vertical" style="height: 100vh">
+    
+    <n-split v-model:size="split" direction="vertical" style="height: 100vh" disabled>
       <template #1>
         <div class="Pane1">
           <div class="scoreBar">
@@ -12,14 +13,14 @@
           </div>
         </div>
       </template>
-
+      <n-divider />
       <template #2>
         <div class="Pane2">
-          <div class="InputArea" :style="{ height: (100 - split * 100) + '%' }">
+          <div class="InputArea">
             <Input />
           </div>
           <n-button strong secondary round> Submit </n-button>
-          <div class="OutputArea" :style="{ height: (100 - split * 100) + '%' }">
+          <div class="OutputArea">
             <Output />
           </div>
         </div>
@@ -53,7 +54,6 @@ watch(split, (newValue, oldValue) => {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 2%;
 }
 .container {
   background-color: #f0f0f0;

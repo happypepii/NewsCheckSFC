@@ -6,14 +6,13 @@
           
           placeholder="URL"
           class="custom1"
-        />
-       
+        /> 
         <n-input type="textarea"
-          v-model:value="textareaValue"
+          
           placeholder="News input"
           class="custom2"
           :autosize="{
-            maxRows:22
+            maxRows:12,
           }"
         />
       </n-space>
@@ -36,6 +35,7 @@
       };
     },
   });
+  
   </script>
   
   <style scoped>
@@ -43,7 +43,7 @@
   .body-container {
     justify-content: center;
     align-items: center;
-    margin: 5% 3%; 
+    margin: 2% 3%; 
   }
   .custom1 {
     width: 100%; 
