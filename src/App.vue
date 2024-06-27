@@ -10,6 +10,7 @@ import { RouterView } from 'vue-router';
     <div class="router-view-container">
       <RouterView />
     </div>
+    <Footer />
   </div>
 </template>
 
@@ -17,7 +18,7 @@ import { RouterView } from 'vue-router';
 .app-container {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* 垂直置中 */
+  justify-content: space-between; /* 分配空間使header和footer保持在上下 */
   background-color: #f0f0f0;
   min-height: 100vh;
   margin: 0;
@@ -25,7 +26,11 @@ import { RouterView } from 'vue-router';
 }
 
 .router-view-container {
-  width: 100%; /* 設置寬度 */
-  max-width: 100%; /* 最大寬度 */
+  display: flex;
+  flex: 1;
+  justify-content: center; /* 水平置中 */
+  align-items: center; /* 垂直置中 */
+  width: 100%;
+  padding: 20px; 
 }
 </style>
