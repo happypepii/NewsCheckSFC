@@ -1,82 +1,36 @@
-<template>
-  <div class="container">
-    <Header />
-    <n-split v-model:size="split" direction="vertical" style="height: 100vh">
-      <template #1>
-        <div class="Pane1">
-          <div class="scoreBar">
-            <Score />
-          </div>
-          <div class="news">
-            <News />
-          </div>
-        </div>
-      </template>
+<script setup>
+import Header from "./components/header.vue";
+import Footer from "./components/Footer.vue";
+import { RouterView } from 'vue-router';
+</script>
 
-      <template #2>
-        <div class="Pane2">
-          <div class="InputArea" :style="{ height: (100 - split * 100) + '%' }">
-            <Input />
-          </div>
-          <n-button strong secondary round> Submit </n-button>
-          <div class="OutputArea" :style="{ height: (100 - split * 100) + '%' }">
-            <Output />
-          </div>
-        </div>
-      </template>
-    </n-split>
+<template>
+  <div class="app-container">
+    <Header />
+    <div class="router-view-container">
+      <RouterView />
+    </div>
+    <Footer />
   </div>
 </template>
 
-<script setup>
-import Header from "./components/header.vue";
-import Score from "./components/score.vue";
-import News from "./components/news.vue";
-import Input from "./components/input.vue";
-import Output from "./components/output.vue";
-
-import { ref } from "vue";
-const split = ref(0.35);
-watch(split, (newValue, oldValue) => {
-  console.log("Split value changed:", newValue);
-});
-</script>
-
 <style scoped>
-.Pane1 {
+.app-container {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between; /* 分配空間使header和footer保持在上下 */
+  background-color: #f0f0f0;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
-.Pane2 {
+.router-view-container {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 2%;
-}
-.container {
-  background-color: #f0f0f0;
-}
-.scoreBar {
-  width: 55%;
-  border-radius: 10px;
-  background-color: #d1d1d1;
-}
-.news {
-  min-width: 35%;
-  border-radius: 10px;
-  /* background-color: #d1d1d1; */
-  /* background-color: white; */
-}
-.InputArea {
-  width: 40%;
-  border-radius: 10px;
-  background-color: #ffffff;
-}
-.OutputArea {
-  width: 40%;
-  border-radius: 10px;
-  /* background-color: #d1d1d1; */
+  flex: 1;
+  justify-content: center; /* 水平置中 */
+  align-items: center; /* 垂直置中 */
+  width: 100%;
+  padding: 20px; 
 }
 </style>
