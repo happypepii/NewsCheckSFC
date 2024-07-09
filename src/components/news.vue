@@ -1,44 +1,58 @@
 <template>
+  <div>
     <h1>More news</h1>
     <n-tabs type="segment" animated>
-      <n-tab-pane name="News1" tab="News1">
-        <button class="card-btn" @click="openNewTab">
-        <n-card title="何時淘汰「未捕獲碳排放」的燃煤發電？G7達成共識：2035年" size="small">
-        sky news
-        <n-tag :bordered="false" type="success" class="tag">
-        60%
-        </n-tag>
-        </n-card>
-      </button>
-      </n-tab-pane>
-      <n-tab-pane name="News2" tab="News2">
-        <n-card title="卡片">
-        卡片内容
-        </n-card>
-      </n-tab-pane>
-      <n-tab-pane name="News3" tab="News3">
-        <n-card title="卡片">
-        卡片内容
-        </n-card>
+      <n-tab-pane v-for="(news, index) in newsItems" :key="index" :name="`News${index + 1}`" :tab="`News${index + 1}`">
+        <button class="card-btn" @click="openNewTab(news.url)">
+          <n-card v-if="news" :title="news.title" size="small">
+            {{ news.source }}
+            <n-tag :bordered="false" type="success" class="tag">
+              {{ news.reliability }}
+            </n-tag>
+          </n-card>
+        </button>
       </n-tab-pane>
     </n-tabs>
-  </template>
-  
-  <script setup>
-  const openNewTab = () => {
-  const newWindow = window.open('https://www.storm.mg/article/5106316', '_blank', 'width=800,height=600');
-  // if (!newWindow) {
-  //   alert('Please allow popups for this website');
-  // }
+  </div>
+</template>
+
+<script setup>
+import { ref, watch } from 'vue';
+import { outputData } from '/src/useData.js'; // Import outputData from useData.js
+
+const newsItems = ref([]);
+
+const fetchData = async () => {
+  try {
+    const response = await fetch('/output.json');
+    const data = await response.json();
+    //console.log('Fetched data:', data); // Log the parsed data
+    newsItems.value = [data.news1, data.news2, data.news3].filter(Boolean);
+  } catch (error) {
+    console.error('Error fetching data:', error);
   }
-  </script>
+};
+
+
+const openNewTab = (url) => {
+  const newWindow = window.open(url, '_blank', 'width=800,height=600');
+  if (!newWindow) {
+    alert('Please allow popups for this website');
+  }
+};
+
+onMounted(() => {
+  fetchData();
+});
+</script>
 
 <style scoped>
-h1{
+h1 {
   color: darkgray;
   font-weight: bold;
   font-family: 'Times New Roman', Times, serif;
 }
+
 .tag {
   position: absolute; /* Set position to absolute */
   bottom: 10px; /* Adjust as needed */
@@ -50,5 +64,4 @@ h1{
   border: none;
   background-color: transparent;
 }
-    
 </style>

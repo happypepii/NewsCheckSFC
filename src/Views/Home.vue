@@ -16,7 +16,7 @@
           <div class="InputArea">
             <Input />
           </div>
-          <n-button strong secondary round>Submit</n-button>
+          <!-- <n-button strong secondary round @click="fetchData">Submit</n-button> -->
           <div class="OutputArea">
             <Output />
           </div>
@@ -66,12 +66,6 @@
   import News from "@/components/news.vue";
   import Input from "@/components/input.vue";
   import Output from "@/components/output.vue";
-
-  import { ref, watch } from "vue";
-  const split = ref(0.4);
-  watch(split, (newValue, oldValue) => {
-      console.log("Split value changed:", newValue);
-  });
 </script>
   
 <style scoped>

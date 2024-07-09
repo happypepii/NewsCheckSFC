@@ -1,0 +1,31 @@
+{
+    "output": {
+        "1": "1. 解釋1",
+        "2": "2. 解釋2",
+        "3": "3. 解釋3123123"
+    },
+    "reliability": {
+        "source": "90%",
+        "content": "70%",
+        "overall": "80%"
+    },
+    "news1": {
+        "url": "https://news.ltn.com.tw/news/politics/breakingnews/4728350",
+        "title": "何時淘汰.......",
+        "source": "新聞來源",
+        "reliability": "70%"
+    },
+    "news2": {
+        "url": "xxxxx.com",
+        "title": "國中小學應......",
+        "source": "新聞來源",
+        "reliability": "70%"
+    },
+    "news3": {
+        "url": "xxxxx.com",
+        "title": "台灣2024總統大選.....",
+        "source": "新聞來源sky news",
+        "reliability": "70%"
+    }  
+}  
+
