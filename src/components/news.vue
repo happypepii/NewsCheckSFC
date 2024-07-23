@@ -63,5 +63,6 @@ h1 {
   text-align: left;
   border: none;
   background-color: transparent;
+  width: 100%;
 }
 </style>
