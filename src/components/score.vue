@@ -29,35 +29,36 @@
 </template>
 
 <script>
-import { defineComponent, ref, onMounted } from 'vue';
+import { defineComponent, ref, onMounted, watch } from 'vue';
 import axios from 'axios';
 import { changeColor } from 'seemly';
 import { useThemeVars } from 'naive-ui';
 import { NProgress } from 'naive-ui';
+import { outputData as externalOutputData } from '/src/useData.js';
 
 export default defineComponent({
   components: {
     NProgress,
   },
-
   setup() {
     const themeVars = useThemeVars();
     const overallPercentage = ref(0);
     const contentPercentage = ref(0);
     const sourcePercentage = ref(0);
+    const outputData = ref(null);
+
+    watch(externalOutputData, (newData) => {
+      if (newData && newData.reliability) {
+        overallPercentage.value = parseInt(newData.reliability.overall, 10) || 0;
+        contentPercentage.value = parseInt(newData.reliability.content, 10) || 0;
+        sourcePercentage.value = parseInt(newData.reliability.source, 10) || 0;
+      }
+    });
 
     const fetchData = async () => {
       try {
-        const response = await axios.get('/output.json');
-        const data = response.data;
-
-        // Assuming reliability percentages are in data.reliability object
-        const { source, content, overall } = data.reliability;
-
-        // Update percentage values
-        overallPercentage.value = parseInt(overall, 10);
-        contentPercentage.value = parseInt(content, 10);
-        sourcePercentage.value = parseInt(source, 10);
+        const response = await axios.get('/src/useData.js');
+        outputData.value = response.data;
       } catch (error) {
         console.error('Error fetching data:', error);
       }

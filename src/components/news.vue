@@ -17,17 +17,20 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 import { outputData } from '/src/useData.js'; // Import outputData from useData.js
+import axios from 'axios';
 
-const newsItems = ref([]);
+const newsItems = ref([])
+
+watch(outputData, (newData) => {
+  newsItems.value = [newData.news1, newData.news2, newData.news3];
+});
 
 const fetchData = async () => {
   try {
-    const response = await fetch('/output.json');
-    const data = await response.json();
-    //console.log('Fetched data:', data); // Log the parsed data
-    newsItems.value = [data.news1, data.news2, data.news3].filter(Boolean);
+    const response = await axios.get('/src/useData.js');
+    outputData.value = response.data;
   } catch (error) {
     console.error('Error fetching data:', error);
   }
